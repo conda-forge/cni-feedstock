@@ -1,16 +1,14 @@
-{% set name = "cni"%}
-{% set version = "0.6.0"%}
-
-{% set sha256 = "802f4a002b4eb774624a9dc1c859d3c9926eb2d862e66a673fc99cfc8bcd7494" %}
+{% set name = "cni" %}
+{% set version = "0.6.0" %}
 
 package:
   name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  url: https://github.com/containernetworking/{{ name }}/archive/v{{ version }}.tar.gz  # [not win]
+  url: https://github.com/containernetworking/{{ name }}/archive/v{{ version }}.tar.gz
   fn: {{ name }}-{{ version }}.tar.gz  # [not win]
-  sha256: {{ sha256 }}  # [not win]
+  sha256: 802f4a002b4eb774624a9dc1c859d3c9926eb2d862e66a673fc99cfc8bcd7494
 
 build:
   skip: True  # [not linux]
@@ -18,10 +16,9 @@ build:
 
 requirements:
   build:
-    - make  # [not win]
-    - {{ compiler('c') }}
+    - make
+    - go 1.8.*
   host:
-    - go 1.8.*  # [not win]
   run:
     - jq
 
