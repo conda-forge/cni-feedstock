@@ -1,2 +1,2 @@
-c_compiler:
-- toolchain_c
+go_compiler:
+- go
