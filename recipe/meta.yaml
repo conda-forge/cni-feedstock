@@ -12,11 +12,12 @@ source:
 
 build:
   skip: True  # [not linux]
-  number: 1001
+  number: 1002
 
 requirements:
   build:
     - {{ compiler('go') }}
+    - {{ compiler('c') }}
     - make
   host:
   run:
