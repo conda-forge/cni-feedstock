@@ -4,14 +4,13 @@
 {% set name = import_path.split('/')[-1] %}
 {% set pkg_src = ('src/'+import_path).replace("/", "\\" if win else "/") %}
 
-
 package:
   name: {{ name|lower }}
   version: {{ version }}
 
 source:
   folder: {{ pkg_src }}
-  url: {{ import_path }}/archive/v{{ version }}.tar.gz
+  url: https://{{ import_path }}/archive/v{{ version }}.tar.gz
   sha256: 4517eabfd65aea2012dc48d057bf889a0a41ed9837387d95cd1e36c0dbddcfd4
 
 build:
@@ -38,7 +37,7 @@ about:
   home: https://github.com/containernetworking/cni
   license: Apache-2.0
   license_family: Apache
-  license_file: LICENSE
+  license_file: {{ pkg_src }}/LICENSE
   summary: CNI is a specification and libraries for writing plugins to configure network interfaces in Linux containers.
   dev_url: https://github.com/containernetworking/cni
 
