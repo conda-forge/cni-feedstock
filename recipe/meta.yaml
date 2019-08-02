@@ -24,8 +24,7 @@ requirements:
   build:
     - {{ compiler('go') }}
     - {{ compiler('c') }}
-  host:
-    - go
+
   run:
     - jq
 
