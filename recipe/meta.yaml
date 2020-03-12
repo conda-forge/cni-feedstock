@@ -15,7 +15,7 @@ source:
 
 build:
   skip: True  # [not linux]
-  number: 0
+  number: 1
   script:
     - pushd {{ pkg_src }}
     - go install -v  ./cnitool
@@ -44,3 +44,5 @@ extra:
   recipe-maintainers:
     - sodre
     - adbeda
+    - rluria14
+    - oblute
