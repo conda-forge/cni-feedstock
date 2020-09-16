@@ -2,14 +2,14 @@
 {% set version = "0.8.0" %}
 
 {% set name = import_path.split('/')[-1] %}
-{% set pkg_src = ('src/' + import_path).replace("/", os.sep) %}
+#{% set pkg_src = ('src/' + import_path).replace("/", os.sep) %}
 
 package:
   name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  folder: {{ pkg_src }}
+#  folder: {{ pkg_src }}
   url: https://{{ import_path }}/archive/v{{ version }}.tar.gz
   sha256: df8afe3eeae3296ba33ca267041c42f13135c3a067bf2d932761bb02998247a6
 
@@ -17,7 +17,7 @@ build:
   skip: True  # [not linux]
   number: 0
   script:
-    - pushd {{ pkg_src }}/cnitool
+    - pushd cnitool
     - GOBIN=$(go env GOBIN)
     - go build -v -o $GOBIN/{{ name }} .
 
