@@ -9,7 +9,7 @@ package:
   version: {{ version }}
 
 source:
-#  folder: {{ pkg_src }}
+  folder: {{ pkg_src }}
   url: https://{{ import_path }}/archive/v{{ version }}.tar.gz
   sha256: df8afe3eeae3296ba33ca267041c42f13135c3a067bf2d932761bb02998247a6
 
@@ -17,9 +17,9 @@ build:
   skip: True  # [not linux]
   number: 0
   script:
-    - pushd cnitool
+    - pushd {{ pkg_src }}
     - GOBIN=$(go env GOBIN)
-    - go build -v -o $GOBIN/{{ name }} .
+    - go build -v -o $GOBIN/{{ name }} ./cnitool
 
 requirements:
   build:
