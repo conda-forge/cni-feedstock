@@ -1,5 +1,5 @@
 {% set import_path = "github.com/containernetworking/cni" %}
-{% set version = "0.7.1" %}
+{% set version = "0.8.0" %}
 
 {% set name = import_path.split('/')[-1] %}
 {% set pkg_src = ('src/' + import_path).replace("/", os.sep) %}
@@ -15,7 +15,7 @@ source:
 
 build:
   skip: True  # [not linux]
-  number: 1
+  number: 0
   script:
     - pushd {{ pkg_src }}
     - go install -v  ./cnitool
