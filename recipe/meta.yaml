@@ -18,8 +18,7 @@ build:
   number: 0
   script:
     - pushd {{ pkg_src }}
-    - GOBIN=$(go env GOBIN)
-    - go build -v -o $GOBIN/{{ name }} ./cnitool
+    - go install ./cnitool
 
 requirements:
   build:
