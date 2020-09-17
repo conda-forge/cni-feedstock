@@ -18,6 +18,7 @@ build:
   number: 0
   script:
     - pushd {{ pkg_src }}
+    - go get -u {{ import_path }}/libcni
     - go install ./cnitool
 
 requirements:
