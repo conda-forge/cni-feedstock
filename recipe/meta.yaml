@@ -17,8 +17,8 @@ build:
   skip: True  # [not linux]
   number: 0
   script:
+    - export PATH=$PATH:$GOPATH/bin
     - pushd {{ pkg_src }}
-    - go get -u {{ import_path }}/libcni
     - go install ./cnitool
 
 requirements:
