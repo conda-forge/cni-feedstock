@@ -15,7 +15,7 @@ source:
 
 build:
   skip: true  # [not linux]
-  number: 0
+  number: 1
   script:
     - pushd {{ pkg_src }}
     - go get -d -v ./libcni
@@ -43,6 +43,7 @@ about:
 
 extra:
   recipe-maintainers:
+    - mxr-conda
     - sodre
     - adbeda
     - rluria14
